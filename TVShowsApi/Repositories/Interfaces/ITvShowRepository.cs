@@ -4,9 +4,9 @@ namespace TVShowsApi.Repositories.Interfaces
 {
     public interface ITvShowRepository
     {
-        Task<List<TvShow>> Get(string search);
-        Task<string> Add(TvShow show);
-        Task<string> Update(TvShow show);
+        Task<List<TvShow>> Get(bool? isFavorite, string search, int pageNumber, int pageSize);
+        Task<string> Add(TvShowCreateDto showDto);
+        Task<string> Update(TvShowCreateDto showDto, int id);
         Task<string> Delete(int id);
     }
 }
